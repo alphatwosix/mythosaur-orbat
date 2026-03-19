@@ -147,17 +147,6 @@ function flattenTree(nodes, acc = []) {
   return acc;
 }
 
-function findNode(nodes, name) {
-  for (const node of nodes) {
-    if (node.name === name) return node;
-    if (node.children?.length) {
-      const found = findNode(node.children, name);
-      if (found) return found;
-    }
-  }
-  return null;
-}
-
 function addChild(nodes, parentName, child) {
   return nodes.map((node) => {
     if (node.name === parentName) {
